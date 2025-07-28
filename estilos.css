@@ -1,0 +1,140 @@
+:root {
+    --color-primario: #3498db;      /* Azul principal */
+    --color-secundario: #2c3e50;    /* Azul oscuro/Gris */
+    --color-fondo: #ecf0f1;         /* Gris claro */
+    --color-texto: #34495e;         /* Gris oscuro */
+    --color-aprobado: #27ae60;      /* Verde para aprobado */
+    --color-bloqueado: #e74c3c;     /* Rojo para bloqueado (hover) */
+    --color-blanco: #ffffff;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: var(--color-secundario);
+    font-weight: 600;
+}
+
+.motivacion {
+    font-style: italic;
+    color: var(--color-primario);
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.malla-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los semestres se ajusten en pantallas pequeñas */
+    gap: 20px;
+    justify-content: center;
+    padding: 0 10px;
+}
+
+.semestre {
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    padding: 20px;
+    min-width: 280px; /* Ancho mínimo para cada semestre */
+    flex: 1; /* Permite que los semestres crezcan */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.semestre-titulo {
+    color: var(--color-primario);
+    border-bottom: 2px solid var(--color-primario);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.ramo {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-left: 5px solid var(--color-primario);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+}
+
+.ramo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ramo.aprobado {
+    background-color: var(--color-aprobado);
+    color: var(--color-blanco);
+    text-decoration: line-through;
+    border-left-color: var(--color-secundario);
+}
+
+.ramo.bloqueado {
+    border-left-color: var(--color-bloqueado);
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Modal de Requisitos */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-contenido {
+    background-color: var(--color-blanco);
+    margin: 15% auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    text-align: center;
+    position: relative;
+}
+
+.cerrar-modal {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar-modal:hover,
+.cerrar-modal:focus {
+    color: var(--color-secundario);
+}
